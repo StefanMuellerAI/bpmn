@@ -1,0 +1,21 @@
+{
+  "name": "bpmn-editor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@bpmn-io/properties-panel": "^3.24.1",
+    "bpmn-js": "^17.11.1",
+    "bpmn-js-properties-panel": "^5.24.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}

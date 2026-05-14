@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BPMN Editor</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="toolbar">
+        <div class="toolbar-group brand">
+          <span class="logo">⛓</span>
+          <span class="title">BPMN Editor</span>
+        </div>
+
+        <div class="toolbar-group">
+          <button id="btn-new" title="Neues Diagramm">Neu</button>
+          <button id="btn-new-pool" title="Neu mit Swimlane">Neu (Swimlane)</button>
+          <label class="btn-file" title="BPMN-Datei öffnen">
+            Öffnen
+            <input id="input-open" type="file" accept=".bpmn,.xml,application/xml,text/xml" hidden />
+          </label>
+          <button id="btn-save-xml" title="Als BPMN-Datei speichern">Speichern (.bpmn)</button>
+          <button id="btn-export-svg" title="Als SVG exportieren">Export SVG</button>
+        </div>
+
+        <div class="toolbar-group">
+          <button id="btn-undo" title="Rückgängig (Ctrl+Z)">↶</button>
+          <button id="btn-redo" title="Wiederholen (Ctrl+Y)">↷</button>
+          <button id="btn-zoom-in" title="Vergrößern">＋</button>
+          <button id="btn-zoom-out" title="Verkleinern">−</button>
+          <button id="btn-zoom-fit" title="Einpassen">⤢</button>
+        </div>
+
+        <div class="toolbar-group right">
+          <span id="status" class="status">Bereit</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <div id="canvas" class="canvas"></div>
+        <aside id="properties" class="properties"></aside>
+      </main>
+
+      <footer class="footer">
+        <span>Tipp: Klicke auf ein Element und nutze das Kontextmenü, um Tasks, Gateways, Events oder Swimlanes hinzuzufügen.</span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
