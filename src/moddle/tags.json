@@ -1,0 +1,19 @@
+{
+  "name": "Tags",
+  "uri": "http://bpmn-editor/schema/tags",
+  "prefix": "tags",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "associations": [],
+  "types": [
+    {
+      "name": "Tag",
+      "superClass": ["Element"],
+      "properties": [
+        { "name": "type", "isAttr": true, "type": "String" }
+      ]
+    }
+  ],
+  "enumerations": []
+}

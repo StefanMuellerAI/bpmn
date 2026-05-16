@@ -39,11 +39,14 @@
 
       <main class="workspace">
         <div id="canvas" class="canvas"></div>
-        <aside id="properties" class="properties"></aside>
+        <aside class="sidebar">
+          <div id="tag-panel" class="tag-panel empty"></div>
+          <div id="properties" class="properties"></div>
+        </aside>
       </main>
 
       <footer class="footer">
-        <span>Tipp: Klicke auf ein Element und nutze das Kontextmenü, um Tasks, Gateways, Events oder Swimlanes hinzuzufügen.</span>
+        <span>Tipp: Klicke auf einen Task, ein Gateway oder einen Subprozess, um einen Automatisierungs-Tag (KI / RPA / KI+RPA / Manuell) zu setzen.</span>
       </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>

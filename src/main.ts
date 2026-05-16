@@ -7,17 +7,30 @@ import {
 } from 'bpmn-js-properties-panel';
 
 import { EMPTY_DIAGRAM, SWIMLANE_DIAGRAM } from './diagrams';
+import tagsModdleDescriptor from './moddle/tags.json';
+import tagRendererModule from './tagRenderer';
+import { setupTagPanel } from './tags';
 
 const canvasEl = document.querySelector<HTMLDivElement>('#canvas')!;
 const propertiesEl = document.querySelector<HTMLDivElement>('#properties')!;
+const tagPanelEl = document.querySelector<HTMLDivElement>('#tag-panel')!;
 const statusEl = document.querySelector<HTMLSpanElement>('#status')!;
 
 const modeler = new BpmnModeler({
   container: canvasEl,
   propertiesPanel: { parent: propertiesEl },
-  additionalModules: [BpmnPropertiesPanelModule, BpmnPropertiesProviderModule],
+  additionalModules: [
+    BpmnPropertiesPanelModule,
+    BpmnPropertiesProviderModule,
+    tagRendererModule
+  ],
+  moddleExtensions: {
+    tags: tagsModdleDescriptor
+  },
   keyboard: { bindTo: document }
 });
+
+setupTagPanel(modeler, tagPanelEl);
 
 let currentFileName = 'diagramm.bpmn';
 
